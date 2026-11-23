@@ -1,0 +1,253 @@
+/* Reset da página */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Scroll da página */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Cores usadas com frequência */
+:root {
+  --primaria: #4f46e5;
+  --secundaria: #7c3aed;
+  --escuro: #0f172a;
+  --maisEscuro: #0a0f1c;
+  --claro: #e2e8f0;
+  --vidro: rgba(255, 255, 255, 0.1);
+}
+
+/* Cor do fundo e letras da página */
+body {
+  background-color: var(--escuro);
+  color: var(--claro);
+}
+
+/* Aba de navegação */
+.navegacao {
+  position: fixed;
+  top: 0;
+  background: rgba(143, 163, 208, 0.363);
+  width: 100%;
+  z-index: 100;
+  padding: 1.5rem;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 3rem;
+}
+
+.menu-link {
+  text-decoration: none;
+  color: var(--claro);
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.menu-link::after {
+  content: '';
+  height: 2px;
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+  transition: width 0.5 ease;
+}
+
+.menu-link:hover:after {
+  width: 100%;
+}
+
+/* Principal da imagem */
+.cabecalho {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.foto-perfil {
+  width: 350px;
+  height: 350px;
+  box-shadow: 0 0 20px rgba(79d, 70, 229, 0.3);
+  border-radius: 50%;
+  border: 4px solid var(--vidro);
+}
+
+/* Nome da perfil */
+h1 {
+
+  font-size: 3.5rem;
+  color: var(--primaria);
+  font-weight: bold;
+  margin: 20px;
+}
+
+.cabecalho-sub-titulo {
+  font-size: 1.5rem;
+  color: var(--claro);
+}
+
+/* Seção sobre mim */
+.sobre {
+  padding: 6rem 2rem;
+}
+
+.titulo {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 30px;
+  backdrop-filter: blur(10px);
+}
+
+.sobre-caixa {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 16px;
+  border: 1px solid var(--vidro);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.sobre-paragrafo {
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+/* Seção experiencias */
+
+.experiencias {
+  padding: 6rem 2rem;
+  gap: 30px;
+
+}
+
+.experiencia-caixa {
+  background: var(--vidro);
+  padding: 25px;
+  margin: 50px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.experiencia-caixa:hover {
+  transform: translateY(-8px);
+}
+
+.experiencias-text {
+  margin-bottom: 1.6rem;
+  text-align: center;
+
+}
+
+.experiencia-paragrafo {
+  text-align: center;
+  font-size: 20px;
+}
+
+/* Seção de habilidades técnicas */
+
+.habilidade-lista {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+
+  list-style: none;
+  padding: 50px;
+  margin-top: 20px;
+}
+
+.habilidade-lista li {
+  background: var(--vidro);
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Seção de contatos */
+
+.contato-caixa {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 20px 0 35px 0;
+}
+
+.contato-caixa a {
+  text-decoration: none;
+  color: var(--claro);
+}
+
+.contato-caixa i {
+  margin-right: 5px;
+  display: inline;
+  font-size: 25px;
+}
+
+.fa-instagram {
+  color: #e4405f;
+}
+
+.fa-whatsapp {
+  color: #25d366;
+}
+
+.fa-linkedin {
+  color: #0a66c2;
+}
+
+.fa-square-github {
+  color: #ffffff;
+}
+
+/* Responsividade */
+
+/* Tablet */
+
+@media (max-width: 768) {
+  .experiencias {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .experiencia-caixa{
+    flex-direction: column;
+    align-items: center;
+  }
+  .titulo {
+    font-size: 1.8rem;
+  }
+}
+/* Celulares */
+@media (max-width: 480px) {
+  .titulo {
+    font-size: 1.8rem;
+  }
+
+  .experiencia-caixa, .habilidade-lista {
+    width: 90%;
+  }
+
+  .contato-caixa {
+    width: 90%;
+    text-align: center;
+  }
+  .habilidade-lista li {
+    font-size: 16px;
+  }
+
+}
